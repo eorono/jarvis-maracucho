@@ -68,5 +68,11 @@ def take_user_input():
         query = 'None'
     return query
 
+if __name__ == ' __main__':
+    greet_user()
+    while True:
+        query = take_user_input().lower()
+        print(query)
+
 
 
