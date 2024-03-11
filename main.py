@@ -9,7 +9,7 @@ from utils import opening_text
 USERNAME = config('USER')
 BOTNAME = config('BOTNAME')
 
-engine = pyttsx3.init('sapi5')
+engine = pyttsx3.init('dummy')
 
 ## Set Rate
 engine.setProperty('rate', 190)
