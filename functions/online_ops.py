@@ -73,3 +73,31 @@ def get_weather_report(city):
     feels_like = res["main"]["feels_like"]
     return weather, f"{temperature}℃", f"{feels_like}℃"
 
+
+TMDB_API_KEY = config("TMDB_API_KEY")
+
+
+def get_trending_movies():
+    trending_movies = []
+    res = requests.get(
+        f"https://api.themoviedb.org/3/trending/movie/day?api_key={TMDB_API_KEY}").json()
+    results = res["results"]
+    for r in results:
+        trending_movies.append(r["original_title"])
+    return trending_movies[:5]
+
+
+def get_random_joke():
+    headers = {
+        'Accept': 'application/json'
+    }
+    res = requests.get("https://icanhazdadjoke.com/", headers=headers).json()
+    return res["joke"]
+
+
+def get_random_advice():
+    res = requests.get("https://api.adviceslip.com/advice").json()
+    return res['slip']['advice']
+
+
+
