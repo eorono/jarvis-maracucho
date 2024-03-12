@@ -15,3 +15,9 @@ def open_notepad():
 
 def open_discord():
     os.startfile(paths['discord'])
+
+def open_cmd():
+    os.system('start cmd')
+
+def open_calculator():
+    sp.Popen(paths['calculator'])
