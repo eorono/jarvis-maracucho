@@ -9,3 +9,9 @@ paths = {
 
 def open_camera():
     sp.run('start microsoft.windows.camera:', shell=True)
+
+def open_notepad():
+    os.startfile(paths['notepad'])
+
+def open_discord():
+    os.startfile(paths['discord'])
